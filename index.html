@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Etch-a-sketch</h1>
+    <div class="controls"></div>
+    <div>
+      <!-- <input type="range" id="volume" name="volume" min="0" max="11" />
+      <label for="volume">Volume</label> -->
+    </div>
+    <div class="controls">
+      <label>Choose color: </label>
+
+      <input type="color" value="black" />
+      <button>Clear</button>
+    </div>
+    <div id="container"></div>
+
+    <script>
+      const container = document.getElementById("container");
+      const color = document.querySelector("input");
+      /* const range = document.querySelector("input");
+      range.addEventListener("click", (e) => {
+        console.log(range.value);
+      }); */
+      //const size = Number(range.value);
+      let gridSize = 16 * 16;
+      console.log(gridSize);
+
+      // create gridSize var
+      // create createGrid function that grid size as input
+      function createGrid(gridSzie) {
+        // loop through to the gridSize
+        for (let i = 0; i < gridSzie; i++) {
+          // create div element
+          const grid = document.createElement("div");
+          grid.classList.add("grid");
+          // grid.textContent = i;
+          container.appendChild(grid);
+          // add a class
+          // append it to the container
+        }
+        //
+      }
+
+      // create var that references all the created divs using class
+      // loop throught them using forEach and add enter/leave evetns
+      // create changeColor function
+
+      function changeBackgroundColor(e) {
+        // change b
+      }
+
+      createGrid(gridSize);
+      // create remove function
+      function removeGrid() {
+        container.remove();
+      }
+
+      const clear = document.querySelector("button");
+
+      clear.addEventListener("click", (e) => {
+        const gridItems = document.querySelectorAll(".grid");
+        gridItems.forEach((gridItem) => {
+          gridItem.textContent = "";
+          gridItem.style.backgroundColor = "white";
+        });
+        console.table(gridItems);
+      });
+
+      const gridItems = document.querySelectorAll(".grid");
+      gridItems.forEach((gridItem) => {
+        gridItem.addEventListener("mouseenter", (e) => {
+          gridItem.style.backgroundColor = color.value;
+        });
+      });
+    </script>
+  </body>
+</html>
